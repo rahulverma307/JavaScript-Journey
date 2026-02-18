@@ -29,7 +29,7 @@ if (true) {
 //const
 
 const obj ={a:5};
-obj.a="10"// we can chnage obj inside vale 
+obj.a="10"// we can change obj inside value 
 console.log(obj);
 obj={a:45} // we can not change this
 console.log(obj);
