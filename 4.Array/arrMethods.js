@@ -23,7 +23,16 @@ const SpicyOrder=order.filter(o =>o.spicy)
 console.log(SpicyOrder);// return only true value
 
 //reduce
-
+//Ex.1
 const totalRevenue=order.reduce((sum,order)=>{
-     
+     return sum + order.qty*order.price;
 },0)
+console.log(totalRevenue);
+
+//Ex.2
+const grouped=order.reduce((acc,order)=>{
+    const category= order.spicy?"spicy":"mild";
+     acc[category].push(order.dish) 
+     return acc;
+},{spicy:[],mild:[]})
+console.log(grouped);
