@@ -57,7 +57,7 @@ let evenOdd= num3.map(convert=>{
 })
 console.log(evenOdd);
 
-// Boolean
+// Filters
 //Q1=>Get even numbers
 let num4=[1,2,3,4,5,6]
 let even=num4.filter(a=>a%2===0)
@@ -87,7 +87,21 @@ let arrofobj=[
 let obj=arrofobj.filter(ob=>ob.age>=18)
 console.log(obj)
 
-// FIlter + 
+// Filter +  map
+let numberss=[1,2,3,4,5,6]
+.filter(a=>a%2===0)
+.map(a=>a*2)
+
+console.log(numberss);
+
+// Reduce=>reduce() takes an array and reduces it to one final value.
+/**
+ * That value can be:
+-number (sum, total)
+-object
+-array
+-string
+ */
 
 
 
