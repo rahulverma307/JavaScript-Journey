@@ -103,6 +103,22 @@ console.log(numberss);
 -string
  */
 
+//Q1  Find sum of all numbers
+
+let number1=[10,20,30,40]
+let sumOfNumber=number1.reduce((sum,num)=>{
+   return sum+num;
+},0) 
+console.log(sumOfNumber);
+
+//Q2
+let str=["js","react","node"]
+let stringLength=str.reduce((len,char)=>{
+    return len+char.length
+},0)
+console.log(stringLength);
+
+
 
 
 
