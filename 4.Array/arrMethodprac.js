@@ -42,7 +42,54 @@ let char=["js","react","node"];
 let lengthofString=char.map(len=>len.length)
 console.log(lengthofString);
 
-//
+//Boolean Conversion
+
+let data=[0,1,"","hello",null]
+let bool=data.map(d=>{
+    return Boolean(d);
+})
+console.log(bool);
+
+//Q10
+let num3=[1,2,3,4]
+let evenOdd= num3.map(convert=>{
+ return convert%2===0?"Even":"Odd"
+})
+console.log(evenOdd);
+
+// Boolean
+//Q1=>Get even numbers
+let num4=[1,2,3,4,5,6]
+let even=num4.filter(a=>a%2===0)
+console.log(even);
+
+//Q2 Get numbers greater than 10
+let value1=[5,12,8,20,3]
+let graeter=value1.filter(a=>a>10);
+console.log(graeter);
+
+//Q3 Get words longer than 4 characters
+
+let chaar=["js","react","node","ai"]
+let lenFour=chaar.filter(len=>len.length>=4)
+console.log(lenFour);
+//Q From names, keep only those starting with "R"
+let naam1=["Rahul","Amit","Riya","Neha"]
+const nameWithR=naam1.filter(alpha=>alpha.includes("R"))
+console.log(nameWithR);
+
+//Filter object
+let arrofobj=[
+ {name:"Rahul",age:22},
+ {name:"Amit",age:17},
+ {name:"Neha",age:25}
+]
+let obj=arrofobj.filter(ob=>ob.age>=18)
+console.log(obj)
+
+// FIlter + 
+
+
 
 
 
