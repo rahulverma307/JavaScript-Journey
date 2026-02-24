@@ -38,3 +38,25 @@ const grouped=order.reduce((acc,order)=>{
      return acc;
 },{spicy:[],mild:[]})
 console.log(grouped);
+
+//Gotchas
+
+const ticketNUmber=[100,25,3,42,8]
+const sorted=ticketNUmber.sort((a,b)=>a-b)
+console.log(sorted);
+
+//
+const KitchensOrder=[
+     {dish:"Pasta", price:14, spicy:false, qty:2},
+     {dish:"momo", price:10, spicy:true, qty:10},
+     {dish:"pizza", price:5, spicy:false, qty:2},
+];
+
+const mildreport=KitchensOrder
+.filter(o=>!o.spicy)
+.map(o=>({
+    dish:o.dish,
+    total:o.price * o.qty
+}))
+console.log(mildreport);
+
