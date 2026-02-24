@@ -1,4 +1,4 @@
-const order=[
+ const order=[
      {dish:"momo",price:14,spicy:false,qty:3},
      {dish:"pizza",price:8,spicy:true,qty:2},
      {dish:"samosa",price:9,spicy:false,qty:1},
@@ -21,8 +21,10 @@ console.log(receipt);
 //Filter
 const SpicyOrder=order.filter(o =>o.spicy)
 console.log(SpicyOrder);// return only true value
+const Highprice=order.filter(o=>o.price>10)
+log
 
-//reduce
+//reduce-convert a array into single value
 //Ex.1
 const totalRevenue=order.reduce((sum,order)=>{
      return sum + order.qty*order.price;
