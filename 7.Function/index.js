@@ -18,7 +18,9 @@ Hoisting is JavaScript behavior where variable and function declarations
 are moved to the top of their scope during memory creation phase.
  */
 
-//3.Function Expression
+//3.Function Expression ==> are not Hoisted
+//-Because const and let stay in Temporal Dead Zone(TDZ)
+//-Only Variable is hoisted, not value.
 
 const StudentDetail=function (name,branch,fee,duefee,project,attendance){
      return {
@@ -32,3 +34,8 @@ const StudentDetail=function (name,branch,fee,duefee,project,attendance){
 }
 console.log(StudentDetail("rahul","CSE-Ai",117000,200,"AI Trip PLanner","78%"));
 console.log(StudentDetail("Vivek","CSE",117000,200,"AI Trip PLanner","78%"));
+
+// Arrow Function=> NO own this, No arguments Object, Cannot use new 
+const distilEssence=(ingredients)=>{
+   return `Mixing elexier with ${ingredient}`
+}
