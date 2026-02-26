@@ -32,15 +32,16 @@ const bollywoodFilm={
 console.log(bollywoodFilm.introduce());//Ranveer Singh performs in Bajirao Mastani
 
 //this with arrow function and interview question
+//this is tricky question
+const filmDirector = {
+    name: "Sanjay Leela Bhansali",
+    cast: ["Ranveer", "Deepika", "Priyanka"],
 
-const  filmDirector={
-    name:"Sanjay Leela Bhansali",
-    cast:["Ranveer","Deepika","Priyanka"],
-    announcCast(){
-     this.cast.forEach(actor)=>{
-        console.log(`${this.name} introduce`);
-        
-     }
+    announcCast() {
+        this.cast.forEach((actor) => {  
+            console.log(`${this.name} introduce ${actor}`);
+        });
     }
-
 }
+
+filmDirector.announcCast();
