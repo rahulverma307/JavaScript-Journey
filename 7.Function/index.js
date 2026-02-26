@@ -56,9 +56,47 @@ const demos=()=>{
 }
 //demos(1,2,3)// this returne error
 
-//6.In modern JS we use rest 
+//6.In modern JS we use rest operator 
 
 function demo1(...nums){
     console.log(nums);
 }
 demo1(4,5,6,7,8)//[ 4, 5, 6, 7, 8 ]
+
+/// 7.
+function oldBrewingLogs(){
+    console.log("type",typeof arguments);// type is object
+    console.log("is Array:",Array.isArray(arguments));//False
+    console.log(arguments);// this give [Arguments] { '0': 'hello', '1': 'name' } 
+    const argsArray=Array.from(arguments);// convert arguments into array then we can use array properties
+
+    console.log(argsArray);// and this [ 'hello', 'name' ]
+}
+oldBrewingLogs("hello","name") 
+
+
+//8. arrow fn does not have arguments object
+const arrowbrew=()=>{
+    console.log(arguments);
+}
+arrowbrew()//this gives a long error and crash program and how to hande this use try and catch
+
+ const arrowbrew1=()=>{
+    try {
+        console.log(arguments); 
+    } catch (e) {
+        console.log(e);  
+    }
+}
+arrowbrew1()//
+
+//9. Pure and Impure function
+
+let globalCount=0;
+
+function brewAndCount(name){
+    globalCount++;
+}
+brewAndCount()
+
+
