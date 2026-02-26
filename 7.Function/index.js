@@ -32,10 +32,33 @@ const StudentDetail=function (name,branch,fee,duefee,project,attendance){
         attendance:`${attendance},`
      }
 }
-console.log(StudentDetail("rahul","CSE-Ai",117000,200,"AI Trip PLanner","78%"));
+console.log(StudentDetail("Rahul","CSE-Ai",117000,200,"AI Trip PLanner","78%"));
 console.log(StudentDetail("Vivek","CSE",117000,200,"AI Trip PLanner","78%"));
 
 // Arrow Function=> NO own this, No arguments Object, Cannot use new 
 const distilEssence=(ingredients)=>{
-   return `Mixing elexier with ${ingredient}`
+   return `Mixing elexier with ${ingredients}`
 }
+console.log(distilEssence);
+
+//4.Argument Object==>Inside normal functions, JavaScript automatically
+//  creates a special object called arguments.it store all value we pass to a function
+
+function demo(a,b){
+    console.log(arguments); 
+}
+demo(4,8)//[Arguments] { '0': 4, '1': 8 }
+
+//5.Arrow functions DO NOT have arguments
+
+const demos=()=>{
+    console.log(arguments); 
+}
+//demos(1,2,3)// this returne error
+
+//6.In modern JS we use rest 
+
+function demo1(...nums){
+    console.log(nums);
+}
+demo1(4,5,6,7,8)//[ 4, 5, 6, 7, 8 ]
