@@ -1,5 +1,5 @@
 //Function-> A fn is a reausable block of code that performs a task.
-
+/*
 //1.Function Declaration
 function brewpoints(ingredients,dose){
     return `Total Price is :${ingredients*dose}`
@@ -16,7 +16,7 @@ function sayMyName(name,age){
  * What is hoisting?
 Hoisting is JavaScript behavior where variable and function declarations 
 are moved to the top of their scope during memory creation phase.
- */
+ 
 
 //3.Function Expression ==> are not Hoisted
 //-Because const and let stay in Temporal Dead Zone(TDZ)
@@ -92,11 +92,56 @@ arrowbrew1()//
 
 //9. Pure and Impure function
 
+
+// Impure function->this fn depend on outside data(global variable...) 
+
 let globalCount=0;
 
 function brewAndCount(name){
     globalCount++;
+    return name;
 }
-brewAndCount()
+console.log(brewAndCount("Rahul"));
+console.log(globalCount);//1
+console.log(brewAndCount("Rahul"));
+console.log(globalCount);//2
+
+//pure function->always gives the same output for the same inputand does not change
+//anything outside the function
+
+function add(a,b){
+    return a+b
+}
+console.log(add(98,98));//196*/
+
+//iife =>()()
+
+// (function love(name,age,lovelevel,trustleve){
+     
+// })()
+
+//fn expression
+const posionShop=(function(){
+   let inventory=0;
+   return {
+    brew(){
+        inventory++;
+        return `Brew potion #${inventory}`
+    },
+    getStock(){
+        return inventory;
+    }
+   }
+})()
+
+
+console.log(posionShop);//{ brew: [Function: brew], getStock: [Function: getStock] }
+console.log(posionShop.brew());//Brew potion #1
+console.log(posionShop.inventory);//undefined
+
+
+
+
+
 
 
