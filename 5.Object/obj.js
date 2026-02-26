@@ -83,6 +83,8 @@ const priceList=[
 
 let priceListObj=Object.fromEntries(priceList)
 console.log(priceListObj);//{ A: 3000, B: 4000 }
+console.log(priceList);
+
 
 
 
