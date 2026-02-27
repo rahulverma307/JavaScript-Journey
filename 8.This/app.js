@@ -124,6 +124,54 @@ console.log(bindReport());
 
 
 ////
+/**
+ * when 'new' keyword use hota hai: steps
+ * 1.Ekh empty object create hota hai
+ * 2.every fn have one prototype
+ * 3.fn ke prototype or empty object ke prototype ko link kiya jata hia
+ * 4.bound this to new object
+ * 5.return object
+ */
+
+function TataCar(chassiNumber,modelName){
+    this.chassiNumber=chassiNumber;
+    this.modelName=modelName;
+    this.fuelLevel=100;
+
+}
+TataCar.prototype.status=function(){
+    return `Tata ${this.modelName} #${this.chassiNumber} | fuel: ${this.fuelLevel}`
+}
+
+const car1 =new TataCar("MH-101","Nexon")
+const car2=new TataCar("DL-202","Harrier")
+
+console.log(car1.status())
+console.log(car2.status())
+
+
+// this is not sam as above
+//
+//
+
+function createAutoRickshaw(id,route){
+    return{
+        id,
+        route,
+        run(){
+            return `Auto ${this.id} running on ${this.route}`
+        }
+    }
+}
+
+const auto1=createAutoRickshaw("UP-1","Luknow-kanpur");
+const auto2=createAutoRickshaw("UP-2","Agra-Mathura");
+
+console.log(auto1,run());//Tata Nexon #MH-101 | fuel: 100
+console.log(auto2.run());//Tata Harrier #DL-202 | fuel: 100
+
+
+
 
 
 
