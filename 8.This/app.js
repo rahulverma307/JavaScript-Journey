@@ -45,11 +45,33 @@ const filmDirector = {
 
 filmDirector.announcCast();
 
-//
+// 
 const filmSet={
     crew:"Spot boys",
     prepareProps(){
-        console.log(`Outer this.crew:${this.crew}`); 
+        console.log(`Outer this.crew:${this.crew}`);//Outer this.crew:Spot boys
+
+        function arrangeChairs(){//Regular Nested Function does not inherit this
+          console.log(`Inner this.crew:${this.crew}`);
     }
+    arrangeChairs();//undefined
+    const arrangeLights=()=>{
+       console.log(`Arrow this.crew:${this.crew}`);//Arrow this.crew:Spot boys
+    }
+    arrangeLights();
+    },
 }
 filmSet.prepareProps()
+
+//Detached Methods
+
+const actor={
+    name:"Ranveer",
+    bow(){
+        return`${this.name}:takes a bow`
+    }
+}
+
+const detachedBow=actor.bow
+console.log(detachedBow());//undefined:takes a bow
+
