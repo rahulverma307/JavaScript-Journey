@@ -34,6 +34,21 @@ console.log(raj);/**{
   console.log(ranbir.makefilms());
   console.log(ranbir.runBusiness());
   console.log(ranbir.cookTraditionalDish());
+  
+  
+  //
+  Array.prototype.last=function(){
+    return this[this.length-1]
+  }
+
+  console.log([1,2,3].last());//3
+
+  //
+  Array.prototype.mapTwo=function (){
+    
+  }
+  
+  
 
 
 
