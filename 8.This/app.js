@@ -152,7 +152,7 @@ console.log(car2.status())
 
 // this is not sam as above
 //
-//
+// this is called factory function
 
 function createAutoRickshaw(id,route){
     return{
