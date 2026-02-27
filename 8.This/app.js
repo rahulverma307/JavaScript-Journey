@@ -78,7 +78,7 @@ console.log(detachedBow());//undefined:takes a bow
 
 //--------------------ALL THIS concept Complete------------------------------------//
 
-///Call and Apply==> Basic Chef(kitchen )
+///Call and Apply==> Basic Chef(kitchen )and return result
 // Bind==>me kisi ko bhejuga(always return a new function)
 
 //call
@@ -95,4 +95,36 @@ const guptajiKitchen={
     name:"gupta ji kitchen"
 }
 console.log(cookdish.call(sharmaKitchen,"panner and spices","Muglai"));
+// Sharama ji kitchen prepares panner and spices in Muglai style!
+
+//apply->use for array
+
+let guptaOrders=["Chole Kulche","Punjabi Dhaba"]
+console.log(cookdish.apply(guptajiKitchen,guptaOrders));
+//gupta ji kitchen prepares Chole Kulche in Punjabi Dhaba style!
+
+const bills=[100,30,45,50]
+console.log(Math.min.apply(null,bills));
+console.log(Math.max(...bills));
+
+//Bind=> retun new function
+
+function reportDelivery(location,status){
+    return `${this.name} at ${location}: ${status}`
+}
+
+const deliveryboy={name:"Ranveer Singh"}
+
+console.log("Call:",reportDelivery.call(deliveryboy,"Lyari","On Way"));
+console.log("Apply:",reportDelivery.apply(deliveryboy,["Mars","Pick Up"]));
+console.log("Bind:",reportDelivery.bind(deliveryboy,"Haridwar","What"));
+
+const bindReport=reportDelivery.bind(deliveryboy,"Haridwar","What");
+console.log(bindReport());
+
+
+////
+
+
+
 
