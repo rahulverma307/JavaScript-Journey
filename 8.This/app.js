@@ -63,7 +63,7 @@ const filmSet={
 }
 filmSet.prepareProps()
 
-//Detached Methods
+//Detached Methods---interview Question
 
 const actor={
     name:"Ranveer",
@@ -71,7 +71,28 @@ const actor={
         return`${this.name}:takes a bow`
     }
 }
-
 const detachedBow=actor.bow
 console.log(detachedBow());//undefined:takes a bow
+
+
+
+//--------------------ALL THIS concept Complete------------------------------------//
+
+///Call and Apply==> Basic Chef(kitchen )
+// Bind==>me kisi ko bhejuga(always return a new function)
+
+//call
+
+function cookdish(ingredient,style){
+    return `${this.name} prepares ${ingredient} in ${style} style!`;
+};
+
+const sharmaKitchen={
+    name:"Sharama ji kitchen"
+}
+
+const guptajiKitchen={
+    name:"gupta ji kitchen"
+}
+console.log(cookdish.call(sharmaKitchen,"panner and spices","Muglai"));
 
