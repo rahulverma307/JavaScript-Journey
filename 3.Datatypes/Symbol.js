@@ -10,11 +10,19 @@ console.log(aadhaar_of_mayur.description);//aadhaar
 
 
 
-const citizenRecord={
-   name :"Ved",
-   age:21,
-   [biometricHash]:"asd47464s6dssd5465",
-   [bloaadGroup]:"O+"
-};
-console.log(Object.keys(citizenRecord));
+// const citizenRecord={
+//    name :"Ved",
+//    age:21,
+//    [biometricHash]:["asd47464s6dssd5465"],
+//    [bloaadGroup]:"O+"
+// };
+// //console.log(Object.keys(citizenRecord));
 
+const RTI={
+    queries : ["Infra budget","Ration Card","Education Budget","Startup Laws"]
+
+}
+for(const query in RTI){
+    console.log(`Filing RTI:${query}`);
+    
+}
