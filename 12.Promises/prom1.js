@@ -43,7 +43,7 @@ promiseThree.then((user)=>{
 
 
 /// 4 Example
-
+/*
 const promiseFour=new Promise((resolve,reject)=>{
     setTimeout(()=>{
        let error=true;
@@ -63,4 +63,27 @@ promiseFour
    console.log(username);
 }).catch((err)=>{
    console.log(err);
+}).finally(()=>{
+   console.log("Finally Promise is Resolved is either rejected");
 })
+*/
+
+
+///Example 5
+
+const promiseFive= new Promise((resolve,reject)=>{
+   setTimeout(()=>{
+      let error=true;
+      if(!error){
+         resolve({username:"javascript",password:"123"})
+      }else{
+         reject("Error: js went wrong")
+      }
+   },1000)
+})
+
+async function consumePromiseFive() {
+   let response=await  promiseFive
+   console.log(response);
+   
+}
