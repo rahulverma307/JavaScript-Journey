@@ -1,5 +1,4 @@
-const { use } = require("react");
-
+/*
 const promiseOne=new Promise(function(resolve,reject){
     // Do an async task=>DB calls,network caal
     setTimeout(function(){
@@ -43,7 +42,7 @@ promiseThree.then((user)=>{
 
 
 /// 4 Example
-/*
+
 const promiseFour=new Promise((resolve,reject)=>{
     setTimeout(()=>{
        let error=true;
@@ -66,14 +65,13 @@ promiseFour
 }).finally(()=>{
    console.log("Finally Promise is Resolved is either rejected");
 })
-*/
 
 
 ///Example 5
 
 const promiseFive= new Promise((resolve,reject)=>{
    setTimeout(()=>{
-      let error=true;
+      let error=false;
       if(!error){
          resolve({username:"javascript",password:"123"})
       }else{
@@ -83,7 +81,25 @@ const promiseFive= new Promise((resolve,reject)=>{
 })
 
 async function consumePromiseFive() {
-   let response=await  promiseFive
-   console.log(response);
-   
+   try {
+      let response=await  promiseFive
+      console.log(response);
+   } catch (error) {
+      console.log(error)
+   }
 }
+consumePromiseFive()
+
+*/
+//  awaits 
+
+async function getAllUsers(){
+try {
+    const respose= await fetch('https://jsonplaceholder.typicode.com/users');
+    const data= await respose.json()
+    console.log(data);
+} catch (error) {
+   console.log("E",error)
+}
+}
+getAllUsers()
