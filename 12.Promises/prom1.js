@@ -1,3 +1,5 @@
+const { use } = require("react");
+
 const promiseOne=new Promise(function(resolve,reject){
     // Do an async task=>DB calls,network caal
     setTimeout(function(){
@@ -19,8 +21,46 @@ new Promise((resolve,reject)=>{
    setTimeout(()=>{
       console.log("Async task 2");
       resolve()
-   },2000)
+   },1000)
 }).then(()=>{
     console.log("Async 2 resolve");
     
+})
+
+
+/// 3 Example
+
+const promiseThree= new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+       resolve({username:"Chai",Email:"Chai@123.com"})
+    },1000)
+})
+
+promiseThree.then((user)=>{
+ console.log(user);
+ 
+})
+
+
+/// 4 Example
+
+const promiseFour=new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+       let error=true;
+       if(!error){
+        resolve({username:"Rahul Modi",password:"123"})
+       } else{
+        reject("Error something went wrong")
+       }
+    },1000)
+})
+
+promiseFour
+.then((user)=>{
+   console.log(user);
+   return user.username
+}).then((username)=>{
+   console.log(username);
+}).catch((err)=>{
+   console.log(err);
 })
