@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: #111;
+        color: white;
+    }
+</style>
+<body>
+    <button id="clickbtn">Click me</button>
+    <script>
+        let buttonRef=window.document.getElementById("clickbtn")
+         buttonRef.onclick = function () {
+            console.log("Kuch toh karna hia iss me ");
+        };
+        // buttonRef.remove()-these are some method
+        // buttonRef.click()
+
+        // function clickBtnHandler(){
+        //     saveDataRoDb()
+        // }
+        
+        // function saveDataRoDb(){
+        //     console.log("We are now saving data to the DB");
+        // }
+
+    </script>
+</body>
+</html>
