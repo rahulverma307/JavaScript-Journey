@@ -15,17 +15,33 @@
     <button id="clickbtn">Click me</button>
     <script>
         let buttonRef=window.document.getElementById("clickbtn")
-         buttonRef.onclick = function () {
-            console.log("Kuch toh karna hia iss me ");
-        };
-        // buttonRef.remove()-these are some method
-        // buttonRef.click()
+        // 5 buttonRef.onclick = function () {
+        //     console.log("Kuch toh karna hia iss me ");
+        // };
+         //6  buttonRef.onclick = function () {
+        //     console.log("Kuch toh karna hia iss me ");
+        // };
+        // we only use one onclick in that method ,above function is
+        // override first fn
+        //7 we addEventlisteners
+        buttonRef.addEventListener("click",function(){
+            console.log("Ye to shia hia btn click hua ");
+        });
+         buttonRef.addEventListener("click",function(){
+            console.log("Save Karlo DB me");
+        })
+        // ab ye dono chalege abb ye override nahi hoge 
 
-        // function clickBtnHandler(){
+
+        
+        //1 buttonRef.remove()-these are some method
+        //2 buttonRef.click()
+
+        // 4function clickBtnHandler(){
         //     saveDataRoDb()
         // }
         
-        // function saveDataRoDb(){
+        //3 function saveDataRoDb(){
         //     console.log("We are now saving data to the DB");
         // }
 
