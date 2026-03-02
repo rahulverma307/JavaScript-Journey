@@ -1,4 +1,4 @@
-/*
+
 const promiseOne=new Promise(function(resolve,reject){
     // Do an async task=>DB calls,network caal
     setTimeout(function(){
@@ -90,7 +90,7 @@ async function consumePromiseFive() {
 }
 consumePromiseFive()
 
-*/
+
 //  awaits 
 
 async function getAllUsers(){
