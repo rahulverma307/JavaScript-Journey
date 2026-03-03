@@ -14,7 +14,27 @@
 <body>
     <button id="clickbtn">Click me</button>
     <script>
-        let buttonRef=window.document.getElementById("clickbtn")
+        let buttonRef=window.document.getElementById("clickbtn");
+        buttonRef.style.background="skyblue"
+        buttonRef.addEventListener("click",OnClickHandler);
+        function OnClickHandler(){
+            // console.log("Button Click Hua ");
+            // buttonRef.removeEventListener('click',OnClickHandler)
+            buttonRef.remove();
+            console.log("Remove Ho gaya hia");
+            
+            buttonRef=null
+        }
+
+        
+        //1 buttonRef.remove()-these are some method
+        //2 buttonRef.click()
+        //3 function saveDataRoDb(){
+        //     console.log("We are now saving data to the DB");
+        // } 
+          // 4function clickBtnHandler(){
+        //     saveDataRoDb()
+        // }
         // 5 buttonRef.onclick = function () {
         //     console.log("Kuch toh karna hia iss me ");
         // };
@@ -24,26 +44,12 @@
         // we only use one onclick in that method ,above function is
         // override first fn
         //7 we addEventlisteners
-        buttonRef.addEventListener("click",function(){
-            console.log("Ye to shia hia btn click hua ");
-        });
-         buttonRef.addEventListener("click",function(){
-            console.log("Save Karlo DB me");
-        })
-        // ab ye dono chalege abb ye override nahi hoge 
-
-
-        
-        //1 buttonRef.remove()-these are some method
-        //2 buttonRef.click()
-
-        // 4function clickBtnHandler(){
-        //     saveDataRoDb()
-        // }
-        
-        //3 function saveDataRoDb(){
-        //     console.log("We are now saving data to the DB");
-        // }
+        // buttonRef.addEventListener("click",OnClickHandler);
+        // buttonRef.removeEventListener('click',OnClickHandler)
+        //  buttonRef.addEventListener("click",function(){
+        //     console.log("Save Karlo DB me");// in that main problem is we does not have fn name 
+        // })
+        // ab ye dono chalege abb ye override nahi hoge  
 
     </script>
 </body>
