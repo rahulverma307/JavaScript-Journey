@@ -10,35 +10,43 @@
         <input id="todoinput" type="text" placeholder="Enter Your task Here">
         <button id="createBtn">Create</button>
     </div>
+
     <div>
-        <ul id="todoContainer">
-        </ul>
+        <ul id="todoContainer"></ul>
     </div>
+
     <script>
-       const createButtonRef=document.getElementById("createBtn");
+        const createButtonRef = document.getElementById("createBtn");
+        const todoInputRef = document.getElementById("todoinput");
+        const todoContainerRef = document.getElementById("todoContainer");
 
-       const todoInpuRef=document.getElementById("todoinput")
+        (async () => {
 
-       let todoContainerRef=document.getElementById("todoContainer")
+         fetch("https://api.freeapi.app/api/v1/public/quotes",{method:"GET"})
+         .then((response)=>response.json())
+         .then((data)=>{
+            for(const obj of data.data.data){
+                const li=document.createElement("li");
+                li.innerText=obj.content
+                todoContainerRef.appendChild(li)
+            }
+         })
+            
+        })();
 
-       (async ()=>{
-          fetch("https://api.freeapi.app/api/v1/public/quotes",{
-            method:'GET',
-        })
-       })()
+        createButtonRef.addEventListener('click', function () {
+            let value = todoInputRef.value;
 
-       createButtonRef.addEventListener('click',function () {
-        let value = todoInpuRef.value;
-        const li=document.createElement('li')
-        li.innerText=value;
-        li.addEventListener('click',function(){
-         li.remove();
-        })
-        todoContainerRef.appendChild(li)
-        todoInpuRef.value=""
-       })
+            const li = document.createElement('li');
+            li.innerText = value;
 
+            li.addEventListener('click', function () {
+                li.remove();
+            });
 
+            todoContainerRef.appendChild(li);
+            todoInputRef.value = "";
+        });
     </script>
 </body>
 </html>
