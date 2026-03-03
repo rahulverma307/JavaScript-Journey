@@ -7,21 +7,38 @@
 </head>
 <body>
     <div>
-        <input type="text" placeholder="Enter Your task Here">
+        <input id="todoinput" type="text" placeholder="Enter Your task Here">
         <button id="createBtn">Create</button>
     </div>
     <div>
-        <ul>
-            <li>Do js</li>
-            <li>Record a vide for Closures</li>
-            <li>Check is she Applied or not</li>
+        <ul id="todoContainer">
         </ul>
     </div>
     <script>
        const createButtonRef=document.getElementById("createBtn");
+
+       const todoInpuRef=document.getElementById("todoinput")
+
+       let todoContainerRef=document.getElementById("todoContainer")
+
+       (async ()=>{
+          fetch("https://api.freeapi.app/api/v1/public/quotes",{
+            method:'GET',
+        })
+       })()
+
        createButtonRef.addEventListener('click',function () {
-         
+        let value = todoInpuRef.value;
+        const li=document.createElement('li')
+        li.innerText=value;
+        li.addEventListener('click',function(){
+         li.remove();
+        })
+        todoContainerRef.appendChild(li)
+        todoInpuRef.value=""
        })
+
+
     </script>
 </body>
 </html>
