@@ -59,3 +59,13 @@ prepareOrder("Chai")
 
 
 
+//// promise chaining
+
+function asynFunc2(){
+  return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      console.log("data2");
+      resolve("success")
+    },4000)
+  })
+}
