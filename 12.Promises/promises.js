@@ -69,3 +69,8 @@ function asynFunc2(){
     },4000)
   })
 }
+console.log("Fetching data1......");
+ayncFunc1().then(()=>{
+  console.log("fetching data2....");
+  asynFunc2().then((res)=>{})
+})
